@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type=text/javascript>
+			$(function() {
+			  $('a#input').bind('click', function() {
+				$.getJSON('/forecast', {
+				  date_: $('input[name="date_"]').val(),
+				},function(data) {
+					//$("#result").text(data.result);   
+					var forecast_data= '';
+					$.each(data,function(key,result){
+
+						forecast_data += '<tr>';
+						forecast_data += '<td>'+result[0][0]+'</td>';
+						forecast_data += '<td>'+result[0][1]+'</td>';
+						forecast_data += '<td>'+result[0][2]+'</td>';
+						forecast_data += '</tr>';
+						forecast_data += '<tr>';
+						forecast_data += '<td>'+result[1][0]+'</td>';
+						forecast_data += '<td>'+result[1][1]+'</td>';
+						forecast_data += '<td>'+result[1][2]+'</td>';
+						forecast_data += '</tr>';
+						forecast_data += '<tr>';
+						forecast_data += '<td>'+result[2][0]+'</td>';
+						forecast_data += '<td>'+result[2][1]+'</td>';
+						forecast_data += '<td>'+result[2][2]+'</td>';
+						forecast_data += '</tr>';
+						forecast_data += '<tr>';
+						forecast_data += '<td>'+result[3][0]+'</td>';
+						forecast_data += '<td>'+result[3][1]+'</td>';
+						forecast_data += '<td>'+result[3][2]+'</td>';
+						forecast_data += '</tr>';
+						forecast_data += '<tr>';
+						forecast_data += '<td>'+result[4][0]+'</td>';
+						forecast_data += '<td>'+result[4][1]+'</td>';
+						forecast_data += '<td>'+result[4][2]+'</td>';
+						forecast_data += '</tr>';
+						forecast_data += '<tr>';
+						forecast_data += '<td>'+result[5][0]+'</td>';
+						forecast_data += '<td>'+result[5][1]+'</td>';
+						forecast_data += '<td>'+result[5][2]+'</td>';
+						forecast_data += '</tr>';
+						forecast_data += '<td>'+result[6][0]+'</td>';
+						forecast_data += '<td>'+result[6][1]+'</td>';
+						forecast_data += '<td>'+result[6][2]+'</td>';
+						forecast_data += '</tr>';});
+					$('#forecast_table').append(forecast_data);});
+
+
+return false ;
+});
+});
+</script>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+               <div class="navbar-header">
+                  <a class="navbar-brand" href="#">Weather Forecasting</a>
+               </div>
+               <div id="navbar" class="navbar-collapse collapse">
+               </div>
+               <!--/.navbar-collapse -->
+            </div>
+         </nav>
+         <!-- Main jumbotron for a primary marketing message or call to action -->
+         <div class="jumbotron">
+            <div class="container">
+               <br />
+               <div class="row">
+                  <div class="col-md-offset-5 col-md-3">
+                     <h4>Enter Date (yyyymmdd format without seperation) for forecast to be generated.</h4>
+                     	<form>
+				<input type="text"placeholder="eg: 20130101" name="date_" /> 
+				<a href=# id= input><button class="btn btn-default">Submit to forecast</button>
+			</form>
+			<p id = result></p>
+                  </div>
+               </div>
+
+	<div>
+	<table class="table table-bordered table-strip" id="forecast_table">
+		<tr>
+			<th>DATE</th>
+			<th>TMAX</th>
+			<th>TMIN</th>
+		</tr>		
+	</table>
+	</div>
+	<div>
+ 		<footer>
+        		<p>&copy; Akhil 2019</p>
+        	</footer>
+        </div> 
+      </body>
+   </html>
