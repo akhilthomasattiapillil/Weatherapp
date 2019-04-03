@@ -1,5 +1,5 @@
 # Weatherapp
-REST API using Python,Flask,Dnamic UI with HTML,AJAX,Jquery,Dictionary operations.
+REST API using Python,Flask,Dnamic UI with HTML,AJAX,Jquery,Dictionary operations.Docker also provided.
 
 # Rest API
  Rest API with get,post,update,delete methods.
