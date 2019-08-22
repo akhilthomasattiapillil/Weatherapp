@@ -8,7 +8,7 @@ REST API using Python,Flask,Dnamic UI with HTML,AJAX,Jquery,Dictionary operation
 Dynamic Weatherforecast service for 7 days with flask,html,python,ajax and jquery
 
 ## install
-requirements.txt to install flask and flask_restful
+ install flask and flask_restful
 
 ## RUN
 
@@ -48,7 +48,7 @@ place the index.html file in the templates folder which is in the same directory
 
 ### Step 2: Requirements.txt 
 
-- It has all the libraries used for the project -flask, flask_restplus, flask_api. 
+- The libraries used for the project -flask, flask_restplus, flask_api. 
 
 
 ### Step 3: Creating Docker File
